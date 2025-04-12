@@ -55,8 +55,8 @@ export default function Home() {
         <Image
           src="/homebanner.png"
           alt="Banner"
-          width={1920} // Replace with the actual width of your image
-          height={1080} // Replace with the actual height of your image
+          width={1920}
+          height={1080}
           className="w-full h-[300px] sm:h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1100px] 2xl:h-[1400px] object-cover"
         />
       </div>
@@ -136,7 +136,22 @@ export default function Home() {
           ))}
         </Swiper>
       </div>
-    
+
+      {/* Product Showcase */}
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {images.slice(0, 6).map((src, index) => (
+            <div key={index} className="relative w-full h-64 rounded-lg overflow-hidden shadow-md">
+              <Image
+                src={src}
+                alt={`Product ${index + 1}`}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Additional Content After Carousel */}
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -157,14 +172,13 @@ export default function Home() {
               </button>
             </div>
             <div className="md:w-5/12">
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
-                <div className="h-48 md:h-64 bg-green-200 flex items-center justify-center text-green-800">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="relative h-64">
                   <Image
                     src="/home-featured.png"
                     alt="featured"
-                    width={1920} // Replace with the actual width of your image
-                    height={1080} 
-                    className="w-full h-[50px] sm:h-[300px] md:h-[400px] lg:h-[900px] xl:h-[1100px] 2xl:h-[1400px] object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </div>

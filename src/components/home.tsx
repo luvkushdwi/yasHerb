@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import Image from "next/image"; 
+import Image from "next/image";
 
 const images = [
   "/home.png",
@@ -55,6 +55,8 @@ export default function Home() {
         <Image
           src="/homebanner.png"
           alt="Banner"
+          width={1920} // Replace with the actual width of your image
+          height={1080} // Replace with the actual height of your image
           className="w-full h-[300px] sm:h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1100px] 2xl:h-[1400px] object-cover"
         />
       </div>
@@ -66,9 +68,9 @@ export default function Home() {
             Welcome to YasHerb.com
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-            India&#39;s premier provider of authentic herbs and Ayurvedic products.
-            We blend ancient wisdom with modern science to bring you nature&#39;s
-            finest remedies.
+            India&#39;s premier provider of authentic herbs and Ayurvedic
+            products. We blend ancient wisdom with modern science to bring you
+            nature&#39;s finest remedies.
           </p>
         </div>
 
@@ -121,19 +123,20 @@ export default function Home() {
             },
           }}
         >
-            {images.map((src, index) => (
-              <div key={index} className="relative w-full h-64">
-                <Image
-                  src={src}
-                  alt={`Product ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                />
-              </div>
-            ))}
+          {images.map((src, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={src}
+                alt={`Slide ${index + 1}`}
+                width={1920}
+                height={1080}
+                className="w-full h-full object-cover"
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
+    
 
       {/* Additional Content After Carousel */}
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -159,6 +162,8 @@ export default function Home() {
                   <Image
                     src="/home-featured.png"
                     alt="featured"
+                    width={1920} // Replace with the actual width of your image
+                    height={1080} 
                     className="w-full h-[50px] sm:h-[300px] md:h-[400px] lg:h-[900px] xl:h-[1100px] 2xl:h-[1400px] object-cover"
                   />
                 </div>

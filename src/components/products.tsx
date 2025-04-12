@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 
 // Sample product categories - you can modify these as needed
 const categories = [
@@ -119,7 +118,7 @@ export default function Products() {
             Coming Soon
           </div>
           <p className="text-amber-800 text-lg font-light">
-            We're preparing our product collection. Check back soon for our complete catalog!
+            We&#39;re preparing our product collection. Check back soon for our complete catalog!
           </p>
         </div>
       </div>
@@ -226,7 +225,7 @@ export default function Products() {
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-gray-900 font-serif">No products found</h3>
-            <p className="text-lg text-gray-600 font-light mt-2">Try adjusting your search or filter to find what you're looking for.</p>
+            <p className="text-lg text-gray-600 font-light mt-2">Try adjusting your search or filter to find what you&#39;re looking for.</p>
           </div>
         )}
       </div>

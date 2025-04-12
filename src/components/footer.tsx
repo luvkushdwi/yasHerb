@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">YasHerb</h3>
             <p className="text-green-100 mb-4">
-              India's premier provider of authentic herbs and Ayurvedic products. We blend ancient wisdom with modern science.
+              India&#39;s premier provider of authentic herbs and Ayurvedic products. We blend ancient wisdom with modern science.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-green-200 hover:text-white transition-colors">
@@ -89,8 +89,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="py-6 border-t border-green-800">
-          <p className="text-center text-green-200">© {new Date().getFullYear()} YasHerb. All rights reserved.</p>
-        </div>
+        <p className="text-center text-green-200">
+  © {new Date().getFullYear()} YasHerb. All rights reserved. We don&#39;t just sell products; we create experiences.
+</p>
+           </div>
       </div>
     </footer>
   );

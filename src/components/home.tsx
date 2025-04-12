@@ -1,66 +1,12 @@
-// // filepath: /Users/rbmbp19/Documents/yas-india-website/yasherb/src/components/home.tsx
-// "use client";
-
-// import React from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-// import { Autoplay, Navigation, Pagination } from "swiper/modules";
-
-// const images = [
-//   "/home.png",
-//   "/home2.png",
-//   "/home3.png",
-//   "/home.png",
-//   "/home2.png",
-//   "/home3.png",
-//   "/home.png",
-//   "/home2.png",
-//   "/home3.png",
-//   "/home.png",
-// ];
-
-// export default function Home() {
-//   return (
-//     <div className="w-full">
-//       <div className="w-full mb-8">
-//         <img
-//           src="/homebanner.png"
-//           alt="Banner"
-//           className="w-full h-[1400px] object-cover"
-//         />
-//       </div>
-//       <Swiper
-//         modules={[Navigation, Pagination, Autoplay]}
-//         navigation
-//         pagination={{ clickable: true }}
-//         autoplay={{ delay: 3000 }}
-//         loop={true}
-//         className="w-full h-[1100px]"
-//       >
-//         {images.map((src, index) => (
-//           <SwiperSlide key={index}>
-//             <img
-//               src={src}
-//               alt={`Slide ${index + 1}`}
-//               className="w-full h-full object-cover"
-//             />
-//           </SwiperSlide>
-//         ))}
-//       </Swiper>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import Image from "next/image"; 
 
 const images = [
   "/home.png",
@@ -106,7 +52,7 @@ export default function Home() {
     <div className="w-full">
       {/* Responsive Banner */}
       <div className="w-full mb-8">
-        <img
+        <Image
           src="/homebanner.png"
           alt="Banner"
           className="w-full h-[300px] sm:h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1100px] 2xl:h-[1400px] object-cover"
@@ -120,8 +66,8 @@ export default function Home() {
             Welcome to YasHerb.com
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-            India's premier provider of authentic herbs and Ayurvedic products.
-            We blend ancient wisdom with modern science to bring you nature's
+            India&#39;s premier provider of authentic herbs and Ayurvedic products.
+            We blend ancient wisdom with modern science to bring you nature&#39;s
             finest remedies.
           </p>
         </div>
@@ -175,15 +121,17 @@ export default function Home() {
             },
           }}
         >
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={src}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </SwiperSlide>
-          ))}
+            {images.map((src, index) => (
+              <div key={index} className="relative w-full h-64">
+                <Image
+                  src={src}
+                  alt={`Product ${index + 1}`}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+            ))}
         </Swiper>
       </div>
 
@@ -208,7 +156,7 @@ export default function Home() {
             <div className="md:w-5/12">
               <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
                 <div className="h-48 md:h-64 bg-green-200 flex items-center justify-center text-green-800">
-                  <img
+                  <Image
                     src="/home-featured.png"
                     alt="featured"
                     className="w-full h-[50px] sm:h-[300px] md:h-[400px] lg:h-[900px] xl:h-[1100px] 2xl:h-[1400px] object-cover"

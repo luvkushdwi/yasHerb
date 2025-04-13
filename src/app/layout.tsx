@@ -9,6 +9,9 @@ import Home from '@/components/home';
 export const metadata = {
   title: 'YasHerb',
   description: 'Nature\'s Finest Remedies',
+  icons: {
+    icon: "../public/new_logo.png",
+  },
 };
 
 export default function RootLayout({

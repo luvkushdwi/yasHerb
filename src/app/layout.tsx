@@ -11,6 +11,8 @@ export const metadata = {
   description: 'Nature\'s Finest Remedies',
   icons: {
     icon: "/new_logo.png",
+    type: 'image/png',
+    sizes: '32x32', // optional
   },
 };
 

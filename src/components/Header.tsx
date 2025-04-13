@@ -26,11 +26,11 @@ export default function Header() {
 
   // Navigation items
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Products", path: "/products" },
-    { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "#home" },
+    { name: "About Us", path: "#aboutUs" },
+    { name: "Products", path: "#products" },
+    // { name: "Blog", path: "#blog" },
+    { name: "Contact Us", path: "#footer" },
   ];
 
   return (
@@ -38,7 +38,7 @@ export default function Header() {
       className={`w-full fixed top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-sm shadow-md py-2"
-          : "bg-transparent py-4"
+          : "bg-black/80 backdrop-blur-sm py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,14 +46,14 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="h-16 w-32 flex items-center justify-center mr-3">
+              <div className="h-18 w-32 flex items-center justify-center mr-3">
                 <Image
-                  src="/yas-herb-logo.png" // Replace with the path to your logo
+                  src="/new_logo.png"
                   alt="YasHerb Logo"
-                  width={128} // Set the width of the image
-                  height={64} // Set the height of the image
+                  width={128}
+                  height={64}
                   className="object-contain"
-                  priority // Ensures the logo is loaded quickly
+                  priority
                 />
               </div>
               <div
@@ -67,32 +67,22 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
                 href={item.path}
                 className={`relative px-4 py-2 text-base font-medium rounded-md transition-all ${
                   pathname === item.path
-                    ? "text-green-700"
-                    : "text-gray-700 hover:text-green-600"
+                    ? scrolled ? "text-green-700" : "text-green-400"
+                    : scrolled ? "text-gray-700 hover:text-green-600" : "text-white hover:text-green-200"
                 }`}
               >
                 {item.name}
                 {pathname === item.path && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-600 rounded-full" />
+                  <span className={`absolute bottom-0 left-0 right-0 h-0.5 ${scrolled ? "bg-green-600" : "bg-green-400"} rounded-full`} />
                 )}
-              </Link>
+              </a>
             ))}
           </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-md font-medium transition-colors"
-            >
-              Get In Touch
-            </Link>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -103,7 +93,7 @@ export default function Header() {
             {isMenuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-900"
+                className={`h-6 w-6 ${scrolled ? "text-gray-900" : "text-white"}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -118,7 +108,7 @@ export default function Header() {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-900"
+                className={`h-6 w-6 ${scrolled ? "text-gray-900" : "text-white"}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -135,42 +125,35 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } md:hidden`}
-        style={{ top: "60px" }}
-      >
-        <div className="flex flex-col h-full">
-          <nav className="flex flex-col py-6 px-6 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`py-3 text-lg font-medium border-b border-gray-100 ${
-                  pathname === item.path
-                    ? "text-green-700 border-green-700"
-                    : "text-gray-700"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+      {/* Mobile Menu - Completely solid white background */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-white md:hidden shadow-lg" style={{ top: "64px" }}>
+          <div className="flex flex-col h-full bg-white">
+            <nav className="flex flex-col py-6 px-6 space-y-4 bg-white">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="py-3 text-lg font-medium border-b border-gray-200 text-black hover:text-green-700"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
 
-          <div className="mt-auto p-6">
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="block w-full bg-green-700 hover:bg-green-800 text-white text-center px-5 py-3 rounded-md font-medium transition-colors"
-            >
-              Get In Touch
-            </Link>
+            <div className="mt-auto p-6 bg-white">
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full bg-green-700 hover:bg-green-800 text-white text-center px-5 py-3 rounded-md font-medium transition-colors"
+              >
+                Get In Touch
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }

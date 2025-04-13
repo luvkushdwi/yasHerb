@@ -100,7 +100,7 @@ export default function Products() {
   });
 
   return (
-    <div className="bg-gray-50 text-gray-800 font-sans min-h-screen">
+    <div id="products" className="bg-gray-50 text-gray-800 font-sans min-h-screen">
       {/* Page Header - matches the style of your About Us page */}
       <section className="bg-white px-6 py-16 sm:px-12 xl:px-24">
         <div className="text-center max-w-4xl mx-auto mb-8">

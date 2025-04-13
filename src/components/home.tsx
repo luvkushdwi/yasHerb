@@ -51,13 +51,14 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Responsive Banner */}
-      <div className="w-full mb-8">
+      <div id="home" className="w-full mb-8">
         <Image
-          src="/homebanner.png"
+           src="/wlcmImg.png"
+         //  src="/wlcmYasHerb.png"
           alt="Banner"
           width={1920}
-          height={1080}
-          className="w-full h-[300px] sm:h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1100px] 2xl:h-[1400px] object-cover"
+          height={1000}
+          className="w-full h-[300px] sm:h-[500px] md:h-[700px] lg:h-[900px] xl:h-[900px] 2xl:h-[900px] object-cover"
         />
       </div>
 
@@ -138,7 +139,7 @@ export default function Home() {
       </div>
 
       {/* Product Showcase */}
-      <div className="max-w-7xl mx-auto px-4">
+      {/* <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {images.slice(0, 6).map((src, index) => (
             <div key={index} className="relative w-full h-64 rounded-lg overflow-hidden shadow-md">
@@ -151,7 +152,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Additional Content After Carousel */}
       <div className="max-w-7xl mx-auto px-4 py-12">

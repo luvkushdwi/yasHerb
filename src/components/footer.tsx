@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-green-900 text-white">
+    <footer id="footer" className="bg-green-900 justify-center text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer */}
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">YasHerb</h3>
+            <h3 className="text-xl font-bold mb-4">YAS India Marking Solution</h3>
             <p className="text-green-100 mb-4">
               India&#39;s premier provider of authentic herbs and Ayurvedic products. We blend ancient wisdom with modern science.
             </p>
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/" className="text-green-100 hover:text-white transition-colors">Home</Link></li>
@@ -47,13 +47,13 @@ export default function Footer() {
               <li><Link href="/blog" className="text-green-100 hover:text-white transition-colors">Blog</Link></li>
               <li><Link href="/contact" className="text-green-100 hover:text-white transition-colors">Contact</Link></li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Product Categories */}
           <div>
             <h3 className="text-xl font-bold mb-4">Categories</h3>
             <ul className="space-y-2">
-              <li><Link href="/products?category=ayurvedic-herbs" className="text-green-100 hover:text-white transition-colors">Ayurvedic Herbs</Link></li>
+              <li><a href="/products?category=ayurvedic-herbs" className="text-green-100 hover:text-white transition-colors">Ayurvedic Herbs</a></li>
               <li><Link href="/products?category=essential-oils" className="text-green-100 hover:text-white transition-colors">Essential Oils</Link></li>
               <li><Link href="/products?category=herbal-powders" className="text-green-100 hover:text-white transition-colors">Herbal Powders</Link></li>
               <li><Link href="/products?category=supplements" className="text-green-100 hover:text-white transition-colors">Supplements</Link></li>
@@ -90,7 +90,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="py-6 border-t border-green-800">
         <p className="text-center text-green-200">
-  © {new Date().getFullYear()} YasHerb. All rights reserved. We don&#39;t just sell products; we create experiences.
+  © {new Date().getFullYear()} YAS India Marking Solution. All rights reserved. We don&#39;t just sell products, we create experiences.
 </p>
            </div>
       </div>

@@ -5,20 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 const images = [
-  "/home.png",
-  "/home2.png",
-  "/home3.png",
-  "/home.png",
-  "/home2.png",
-  "/home3.png",
-  "/home.png",
-  "/home2.png",
-  "/home3.png",
-  "/home.png",
+  "/carousel3.png",
+  "/carousel4.jpeg",
+  "/carousel5.jpeg",
+  "/carousel6.jpeg",
+  // "/home2.png",
+  // "/home3.png",
+  // "/home.png",
+  // "/home2.png",
+  // "/home3.png",
+  // "/home.png",
 ];
 
 const features = [
@@ -53,12 +53,11 @@ export default function Home() {
       {/* Responsive Banner */}
       <div id="home" className="w-full mb-8">
         <Image
-           src="/wlcmImg.png"
-         //  src="/wlcmYasHerb.png"
+          src="/wlcmImg.png"
           alt="Banner"
           width={1920}
           height={1000}
-          className="w-full h-[300px] sm:h-[500px] md:h-[700px] lg:h-[900px] xl:h-[900px] 2xl:h-[900px] object-cover"
+          className="w-full h-[300px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] 2xl:h-[900px] object-cover"
         />
       </div>
 
@@ -103,56 +102,43 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Responsive Carousel */}
+      {/* Responsive Carousel - FIXED HEIGHT FOR BETTER LAPTOP VIEW */}
       <div className="w-full mb-16">
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          loop={true}
-          className="w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[800px] xl:h-[1000px] 2xl:h-[1100px]"
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 1,
-            },
-            1024: {
-              slidesPerView: 1,
-            },
-          }}
-        >
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <Image
-                src={src}
-                alt={`Slide ${index + 1}`}
-                width={1920}
-                height={1080}
-                className="w-full h-full object-cover"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* Product Showcase */}
-      {/* <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {images.slice(0, 6).map((src, index) => (
-            <div key={index} className="relative w-full h-64 rounded-lg overflow-hidden shadow-md">
-              <Image
-                src={src}
-                alt={`Product ${index + 1}`}
-                fill
-                className="object-cover"
-              />
-            </div>
-          ))}
+        <div className="max-w-7xl mx-auto">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation
+            autoplay={{ delay: 3000 }}
+            loop={true}
+            className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[550px] 2xl:h-[600px]"
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 1,
+              },
+              1024: {
+                slidesPerView: 1,
+              },
+            }}
+          >
+            {images.map((src, index) => (
+              <SwiperSlide key={index} className="flex items-center justify-center">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={src}
+                    alt={`Slide ${index + 1}`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-      </div> */}
+      </div>
 
       {/* Additional Content After Carousel */}
       <div className="max-w-7xl mx-auto px-4 py-12">

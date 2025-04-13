@@ -10,7 +10,7 @@ export const metadata = {
   title: 'YasHerb',
   description: 'Nature\'s Finest Remedies',
   icons: {
-    icon: "../public/new_logo.png",
+    icon: "/new_logo.png",
   },
 };
 

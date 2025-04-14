@@ -52,7 +52,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/icon.ico"/>
       </head>
       <body className="flex flex-col min-h-screen">
         <Header />

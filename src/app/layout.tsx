@@ -42,7 +42,7 @@ import Products from '@/components/products';
 import Home from '@/components/home';
 
 export default function RootLayout({
-  children,
+  // children,
 }: {
   children: React.ReactNode;
 }) {

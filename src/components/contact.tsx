@@ -10,7 +10,7 @@ if ( process.env.NEXT_PUBLIC_EMAILJS_USER_ID === undefined) {
 
 
 
-init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+init('kg5fR24FiGE-DLEYl');
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -40,8 +40,8 @@ export default function Contact() {
     };
 
     try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const serviceId = 'service_5n62pvh';
+      const templateId = 'template_ubp5d78';
 
       if (!serviceId || !templateId) {
         throw new Error("Missing required environment variables");

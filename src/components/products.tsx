@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 // Sample product categories - you can modify these as needed
 const categories = [
@@ -86,10 +87,7 @@ export default function Products() {
   });
 
   return (
-    <div
-      id="products"
-      className="bg-gray-50 text-gray-800 font-sans min-h-screen"
-    >
+    <div id="products" className="bg-gray-50 text-gray-800 font-sans min-h-screen">
       {/* Page Header - matches the style of your About Us page */}
       <section className="bg-white px-6 py-16 sm:px-12 xl:px-24">
         <div className="text-center max-w-4xl mx-auto mb-8">
@@ -182,7 +180,7 @@ export default function Products() {
         </div>
 
         {/* Product Grid - Refined styling to match your site */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
@@ -190,11 +188,12 @@ export default function Products() {
             >
               {/* Image Container with Fixed Height */}
               <div className="relative h-56 bg-gray-100 overflow-hidden">
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
+                  width={50}
                   className=" w-full h-full"
-                />
+                 />
               </div>
 
               <div className="p-6 flex flex-col flex-grow">

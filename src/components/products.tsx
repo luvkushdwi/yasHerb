@@ -196,7 +196,7 @@ export default function Products() {
                   className=" w-full h-full"
                  />
               </div>
-
+{/* checking changes */}
               <div className="p-6 flex flex-col flex-grow">
                 {/* Coming Soon Badge - Moved outside the image to the product info area */}
                 <div className="mb-3">

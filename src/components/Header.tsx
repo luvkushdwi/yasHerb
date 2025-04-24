@@ -29,7 +29,6 @@ export default function Header() {
     { name: "Home", path: "#home" },
     { name: "About Us", path: "#aboutUs" },
     { name: "Products", path: "#products" },
-    // { name: "Blog", path: "#blog" },
     { name: "Contact Us", path: "#contactUs" },
   ];
 
@@ -72,13 +71,21 @@ export default function Header() {
                 href={item.path}
                 className={`relative px-4 py-2 text-base font-medium rounded-md transition-all ${
                   pathname === item.path
-                    ? scrolled ? "text-green-700" : "text-green-400"
-                    : scrolled ? "text-gray-700 hover:text-green-600" : "text-white hover:text-green-200"
+                    ? scrolled
+                      ? "text-green-700"
+                      : "text-green-400"
+                    : scrolled
+                    ? "text-gray-700 hover:text-green-600"
+                    : "text-white hover:text-green-200"
                 }`}
               >
                 {item.name}
                 {pathname === item.path && (
-                  <span className={`absolute bottom-0 left-0 right-0 h-0.5 ${scrolled ? "bg-green-600" : "bg-green-400"} rounded-full`} />
+                  <span
+                    className={`absolute bottom-0 left-0 right-0 h-0.5 ${
+                      scrolled ? "bg-green-600" : "bg-green-400"
+                    } rounded-full`}
+                  />
                 )}
               </a>
             ))}
@@ -93,7 +100,9 @@ export default function Header() {
             {isMenuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`h-6 w-6 ${scrolled ? "text-gray-900" : "text-white"}`}
+                className={`h-6 w-6 ${
+                  scrolled ? "text-gray-900" : "text-white"
+                }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -108,7 +117,9 @@ export default function Header() {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`h-6 w-6 ${scrolled ? "text-gray-900" : "text-white"}`}
+                className={`h-6 w-6 ${
+                  scrolled ? "text-gray-900" : "text-white"
+                }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -127,7 +138,10 @@ export default function Header() {
 
       {/* Mobile Menu - Completely solid white background */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white md:hidden shadow-lg" style={{ top: "64px" }}>
+        <div
+          className="fixed inset-0 z-40 bg-white md:hidden shadow-lg"
+          style={{ top: "64px" }}
+        >
           <div className="flex flex-col h-full bg-white">
             <nav className="flex flex-col py-6 px-6 space-y-4 bg-white">
               {navItems.map((item) => (
@@ -142,7 +156,7 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="mt-auto p-6 bg-white">
+            {/* <div className="mt-auto p-6 bg-white">
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
@@ -150,7 +164,7 @@ export default function Header() {
               >
                 Get In Touch
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       )}

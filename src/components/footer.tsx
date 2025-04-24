@@ -163,6 +163,7 @@ export default function Footer() {
           </div>
         </div>
 
+
         {/* Copyright */}
         <div className="py-6 border-t border-green-800">
           <p className="text-green-200">

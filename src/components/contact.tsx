@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 if ( process.env.NEXT_PUBLIC_EMAILJS_USER_ID === undefined) {
-  throw new Error("NEXT_PUBLIC_EMAILJS_SERVICE_ID is not defined");
+  throw new Error("NEXT_PUBLIC_EMAILJS_USER_ID is not defined");
 }
 
 

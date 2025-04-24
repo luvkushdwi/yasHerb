@@ -4,13 +4,13 @@ import Head from "next/head";
 import { useState } from "react";
 
 
-if ( process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID === undefined) {
+if ( process.env.NEXT_PUBLIC_EMAILJS_USER_ID === undefined) {
   throw new Error("NEXT_PUBLIC_EMAILJS_SERVICE_ID is not defined");
 }
 
 
 
-init(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
 
 export default function Contact() {
   const [name, setName] = useState("");

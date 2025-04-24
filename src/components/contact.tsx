@@ -7,6 +7,13 @@ import { useState } from "react";
 if ( process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID === undefined) {
   throw new Error("NEXT_PUBLIC_EMAILJS_SERVICE_ID is not defined");
 }
+
+console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+  , process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  process.env.NEXT_PUBLIC_EMAILJS_USER_ID)
+
+
+  
 init(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
 
 export default function Contact() {

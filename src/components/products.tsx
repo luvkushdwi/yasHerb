@@ -44,8 +44,8 @@ const upcomingProducts = [
   },
   {
     id: 5,
-    name: "Dried Curry Leaf Powder",
-    category: "Herbal Powders",
+    name: "Dried Curry Leaf",
+    category: "Ayurvedic Herbs",
     image: "/drycurryleafpowder.jpeg",
     comingSoon: true,
   },

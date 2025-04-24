@@ -9,83 +9,66 @@ const categories = [
   "Herbal Powders",
   "Herbal Extracts",
   "Herbal Teas",
-  "Supplements"
+  "Supplements",
 ];
 
-// Placeholder products with "Coming Soon" status
 const upcomingProducts = [
   {
     id: 1,
-    name: "Ashwagandha",
-    category: "Ayurvedic Herbs",
-    comingSoon: true
+    name: "Amla Powder (Indian Gooseberry)",
+    category: "Herbal Powders",
+    image: "/AmlaPowder.jpeg",
+    comingSoon: true,
   },
   {
     id: 2,
-    name: "Tulsi (Holy Basil)",
-    category: "Ayurvedic Herbs",
-    comingSoon: true
+    name: "Beetroot Powder",
+    category: "Herbal Powders",
+    image: "/beetrootpowder.jpeg",
+    comingSoon: true,
   },
   {
     id: 3,
-    name: "Turmeric",
+    name: "Coriander Powder",
     category: "Herbal Powders",
-    comingSoon: true
+    image: "/CorinaderPowder.jpeg",
+    comingSoon: true,
   },
   {
     id: 4,
-    name: "Neem",
-    category: "Ayurvedic Herbs",
-    comingSoon: true
+    name: "Curry Leaf Powder",
+    category: "Herbal Powders",
+    image: "/curryleafpowder.jpeg",
+    comingSoon: true,
   },
   {
     id: 5,
-    name: "Brahmi",
-    category: "Herbal Extracts",
-    comingSoon: true
+    name: "Dried Curry Leaf Powder",
+    category: "Herbal Powders",
+    image: "/drycurryleafpowder.jpeg",
+    comingSoon: true,
   },
   {
     id: 6,
-    name: "Shatavari",
-    category: "Ayurvedic Herbs",
-    comingSoon: true
+    name: "Garlic Powder",
+    category: "Herbal Powders",
+    image: "/GarlicPowder.jpeg",
+    comingSoon: true,
   },
   {
     id: 7,
-    name: "Triphala",
-    category: "Supplements",
-    comingSoon: true
+    name: "Karela Powder (Bitter Gourd)",
+    category: "Herbal Powders",
+    image: "/KarelaPowder.jpeg",
+    comingSoon: true,
   },
   {
     id: 8,
-    name: "Amla (Indian Gooseberry)",
-    category: "Ayurvedic Herbs",
-    comingSoon: true
-  },
-  {
-    id: 9,
-    name: "Peppermint",
-    category: "Herbal Teas",
-    comingSoon: true
-  },
-  {
-    id: 10,
-    name: "Lavender Essential Oil",
-    category: "Essential Oils",
-    comingSoon: true
-  },
-  {
-    id: 11,
-    name: "Moringa",
+    name: "Onion Powder",
     category: "Herbal Powders",
-    comingSoon: true
+    image: "/onionpowder.jpeg",
+    comingSoon: true,
   },
-  {
-    id: 12,
-    name: "Ginger",
-    category: "Herbal Extracts",
-    comingSoon: true
-  }
 ];
 
 export default function Products() {
@@ -93,20 +76,32 @@ export default function Products() {
   const [searchTerm, setSearchTerm] = React.useState("");
 
   // Filter products based on category and search term
-  const filteredProducts = upcomingProducts.filter(product => {
-    const matchesCategory = activeCategory === "All" || product.category === activeCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredProducts = upcomingProducts.filter((product) => {
+    const matchesCategory =
+      activeCategory === "All" || product.category === activeCategory;
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   return (
-    <div id="products" className="bg-gray-50 text-gray-800 font-sans min-h-screen">
+    <div
+      id="products"
+      className="bg-gray-50 text-gray-800 font-sans min-h-screen"
+    >
       {/* Page Header - matches the style of your About Us page */}
       <section className="bg-white px-6 py-16 sm:px-12 xl:px-24">
         <div className="text-center max-w-4xl mx-auto mb-8">
-          <h1 className="text-6xl font-extrabold text-gray-900 mb-6 font-serif">Our Products</h1>
+          <h1 className="text-6xl font-extrabold text-gray-900 mb-6 font-serif">
+            Our Products
+          </h1>
           <p className="text-2xl leading-relaxed font-light">
-            Discover our premium selection of <span className="font-semibold text-green-600">authentic Indian herbs</span> and Ayurvedic products for your health and wellness journey.
+            Discover our premium selection of{" "}
+            <span className="font-semibold text-green-600">
+              authentic Indian herbs
+            </span>{" "}
+            and Ayurvedic products for your health and wellness journey.
           </p>
         </div>
       </section>
@@ -118,7 +113,8 @@ export default function Products() {
             Coming Soon
           </div>
           <p className="text-amber-800 text-lg font-light">
-            We&#39;re preparing our product collection. Check back soon for our complete catalog!
+            We&#39;re preparing our product collection. Check back soon for our
+            complete catalog!
           </p>
         </div>
       </div>
@@ -127,10 +123,14 @@ export default function Products() {
       <div className="max-w-7xl mx-auto px-6 py-12 sm:px-12">
         <div className="md:flex items-center justify-between mb-8">
           <div className="mb-6 md:mb-0">
-            <h2 className="text-3xl font-bold text-gray-900 font-serif">Product Catalog</h2>
-            <p className="text-xl text-gray-600 font-light mt-2">Browse our upcoming herb collection</p>
+            <h2 className="text-3xl font-bold text-gray-900 font-serif">
+              Product Catalog
+            </h2>
+            <p className="text-xl text-gray-600 font-light mt-2">
+              Browse our upcoming herb collection
+            </p>
           </div>
-          
+
           <div className="relative">
             <input
               type="text"
@@ -158,8 +158,8 @@ export default function Products() {
         <div className="flex flex-wrap gap-3 mb-10 overflow-x-auto pb-2">
           <button
             className={`px-5 py-2 rounded-full text-base font-medium ${
-              activeCategory === "All" 
-                ? "bg-green-700 text-white" 
+              activeCategory === "All"
+                ? "bg-green-700 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
             onClick={() => setActiveCategory("All")}
@@ -170,8 +170,8 @@ export default function Products() {
             <button
               key={category}
               className={`px-5 py-2 rounded-full text-base font-medium ${
-                activeCategory === category 
-                  ? "bg-green-700 text-white" 
+                activeCategory === category
+                  ? "bg-green-700 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
               onClick={() => setActiveCategory(category)}
@@ -183,54 +183,83 @@ export default function Products() {
 
         {/* Product Grid - Refined styling to match your site */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-  {filteredProducts.map((product) => (
-    <div key={product.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      {/* Product Image Placeholder */}
-      <div className="h-56 bg-gray-100 flex items-center justify-center relative">
-        <span className="text-gray-400 text-lg">Product Image</span>
-        
-        {/* Coming Soon Badge */}
-        <div className="absolute top-4 right-4 bg-amber-100 px-3 py-1 rounded-full text-amber-800 text-xs font-medium">
-          Coming Soon
+          {filteredProducts.map((product) => (
+            <div
+              key={product.id}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col h-full"
+            >
+              {/* Image Container with Fixed Height */}
+              <div className="relative h-56 bg-gray-100 overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className=" w-full h-full"
+                />
+              </div>
+
+              <div className="p-6 flex flex-col flex-grow">
+                {/* Coming Soon Badge - Moved outside the image to the product info area */}
+                <div className="mb-3">
+                  <span className="bg-amber-100 px-3 py-1 rounded-full text-amber-800 text-xs font-medium">
+                    Coming Soon
+                  </span>
+                </div>
+                
+                <span className="text-sm font-medium text-green-600">
+                  {product.category}
+                </span>
+                <h3 className="text-xl font-semibold text-gray-900 mt-1 mb-2">
+                  {product.name}
+                </h3>
+
+                {/* Placeholder for Price */}
+                <div className="text-gray-500 font-medium text-lg mt-auto mb-4">
+                  Price to be announced
+                </div>
+
+                {/* Call to Action - Disabled Order Now Button - Now always at bottom of card */}
+                <button
+                  className="w-full bg-gray-300 text-gray-500 py-3 px-6 rounded-lg font-medium cursor-not-allowed mt-auto"
+                  disabled
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-      
-      <div className="p-6">
-        <span className="text-sm font-medium text-green-600">{product.category}</span>
-        <h3 className="text-xl font-semibold text-gray-900 mt-1 mb-2">{product.name}</h3>
-        
-        {/* Placeholder for Price */}
-        <div className="text-gray-500 font-medium text-lg">Price to be announced</div>
-        
-        {/* Call to Action - Disabled Order Now Button */}
-        <div className="mt-6">
-          <button 
-            className="w-full bg-gray-300 text-gray-500 py-3 px-6 rounded-lg font-medium cursor-not-allowed"
-            disabled
-          >
-            Order Now
-          </button>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
 
         {/* If no products match the filter/search */}
         {filteredProducts.length === 0 && (
           <div className="text-center py-16 bg-white rounded-lg shadow-sm my-8">
             <div className="text-gray-400 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-16 w-16 mx-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 font-serif">No products found</h3>
-            <p className="text-lg text-gray-600 font-light mt-2">Try adjusting your search or filter to find what you&#39;re looking for.</p>
+            <h3 className="text-2xl font-bold text-gray-900 font-serif">
+              No products found
+            </h3>
+            <p className="text-lg text-gray-600 font-light mt-2">
+              Try adjusting your search or filter to find what you&#39;re
+              looking for.
+            </p>
           </div>
         )}
       </div>
 
-      {/* Newsletter Section - Styled like your About Us "Join Our Journey" section */}
+      {/* Newsletter Section commented out in original code */}
       {/* <section className="bg-gray-100 shadow-inner px-6 py-16 mt-16 sm:px-12 xl:px-24">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Stay Updated</h2>

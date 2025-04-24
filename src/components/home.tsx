@@ -102,26 +102,26 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Responsive Carousel - FIXED HEIGHT FOR BETTER LAPTOP VIEW */}
-      <div className="w-full mb-16">
-        <div className="max-w-7xl mx-auto">
+      <div className="w-full mb-16 pointer-events-none">
+        <div className="max-w-7xl mx-auto ">
           <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation
+            modules={[Autoplay]}
             autoplay={{ delay: 3000 }}
             loop={true}
             className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[550px] 2xl:h-[600px]"
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 1,
-              },
-              1024: {
-                slidesPerView: 1,
-              },
-            }}
+            slidesPerView={1}
+            // breakpoints={{
+            //   640: {
+            //     slidesPerView: 1,
+            //   },
+            //   768: {
+            //     slidesPerView: 1,
+            //   },
+            //   1024: {
+            //     slidesPerView: 1,
+            //   },
+            // }}
+           
           >
             {images.map((src, index) => (
               <SwiperSlide key={index} className="flex items-center justify-center">

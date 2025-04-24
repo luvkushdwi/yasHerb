@@ -30,7 +30,7 @@ export default function Header() {
     { name: "About Us", path: "#aboutUs" },
     { name: "Products", path: "#products" },
     // { name: "Blog", path: "#blog" },
-    { name: "Contact Us", path: "#footer" },
+    { name: "Contact Us", path: "#contactUs" },
   ];
 
   return (
